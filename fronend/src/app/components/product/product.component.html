@@ -1,0 +1,22 @@
+<div class="card pt-2">
+  <div class="card-img-top p-2">
+    <img [src]="product.image" [alt]="product.title" />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-text">
+      {{ product.description | truncateDescription : 80 }}
+    </p>
+    <p class="card-text">
+      <strong>Price: </strong>{{ product.price | currency : "INR" }}
+    </p>
+    <p class="card-text"><strong>Category:</strong> {{ product.category }}</p>
+    <p class="card-text">
+      <strong>Rating:</strong> {{ product.ratingRate }} ({{
+        product.ratingCount
+      }}
+      reviews)
+    </p>
+    <button (click)="checkoutProduct()" class="btn btn-primary">Buy</button>
+  </div>
+</div>
